@@ -15,23 +15,6 @@ uv pip install .
 cd src
 uv run server
 ```
-Check `localhost:5000` to see the website.
-
-## `integrate` branch
-Application runs on Vite-based React Frontend and Flask Backend.
-
-### Run the Frontend Server
-1.) `cd client`
-
-2.) `npm i`
-
-3.) `npm run dev`
-
----
-
-Frontend URL: `localhost:5173`
-
-Backend URL: `localhost:5000`
 
 ### API Documentation
 
@@ -410,4 +393,4 @@ Retrieves weather records for multiple specified stations from the database, opt
 
 **Documentation written by [Joshua](https://github.com/Sadliquid) and [Lincoln](https://github.com/lincoln0623)**
 
-**API Documentation and Database Schema Last Updated on `26 March 2025 12:15 PM`**
+**API Documentation and Database Schema Last Updated on `28 March 2025 11:59 AM`**
