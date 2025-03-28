@@ -4,6 +4,7 @@ from pymongo import MongoClient
 import datetime
 import os
 import sys
+import serverless_wsgi
 
 # Get the absolute path of the current file (app.py)
 current_file = os.path.abspath(__file__)
@@ -15,7 +16,7 @@ parent_dir = os.path.dirname(current_dir)
 sys.path.append(parent_dir)
 
 # Import station_list from config.py
-from config import station_list
+from app.config import station_list
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": os.environ.get("FRONTEND_URL")}})
@@ -26,6 +27,10 @@ client = MongoClient(MONGO_CONNECTION_STRING)
 db = client["meteo"]
 test_collection = db["test"]
 temperature_collection = db["temp"]
+
+# Netlify handler
+def handler(event, context):
+    return serverless_wsgi.handle_request(app, event, context)
 
 def handle_api_error(e, message="Internal server error"):
     app.logger.error(f"Error: {str(e)}")
