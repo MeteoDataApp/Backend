@@ -1,7 +1,7 @@
 ## About
 This is a website for meteorology enthusiasts to monitor & compare daily average & seasonal changes!
 
-## How to deploy
+## How to run the Backend Server locally
 Prerequisite: python3.10, pip, git. Tested on Windows 11.
 Recommended to have conda installed, for easier environment management.
 ```bash
